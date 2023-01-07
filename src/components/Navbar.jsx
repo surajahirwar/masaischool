@@ -27,83 +27,108 @@ import Topheader from "./Topheader";
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
-  return (  
+  return (
     <>
-        <Topheader />
-      <Box zIndex={999} width="100%" position="fixed" mt="90px" px={4}>
-      <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-        >
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "space-between", md: "start" }} alignItems="center">
-          <Box
-           
-            display="flex"
-            alignItems={"center"}
-            justifyContent="center"
+      <Box
+        display="flex"
+        mr={"auto"}
+        justifyContent="space-around"
+        alignItems="center"
+        width="100%"
+        fontWeight={600}
+        position="absolute"
+        bg="red.100"
+        w="100%"
+        p={4}
+        color="black"
+      >
+        <Box>
+          Still Studying? If yes, launch yourself ahead of the pack with our
+          Career Accelerator Program
+          <Button ml="20px" colorScheme="red" size="sm">
+            KNOW MORE
+          </Button>
+        </Box>
+      </Box>
+      <Box zIndex={999} width="100%" position="absolute" mt="90px" px={4}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+          <Flex
+            flex={{ base: 1, md: "auto" }}
+            ml={{ base: -2 }}
+            display={{ base: "flex", md: "none" }}
           >
-            <Image
-              
-              src="https://www.masaischool.com/img/navbar/logo.svg"
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              variant={"ghost"}
+              aria-label={"Toggle Navigation"}
             />
-          </Box>
-
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
           </Flex>
+          <Flex
+            flex={{ base: 1 }}
+            justify={{ base: "space-between", md: "start" }}
+            alignItems="center"
+          >
+            <Box display="flex" alignItems={"center"} justifyContent="center">
+              <Image src="https://www.masaischool.com/img/navbar/logo.svg" />
+            </Box>
+
+            <Flex display={{ base: "none", md: "flex" }} ml={10}>
+              <DesktopNav />
+            </Flex>
+          </Flex>
+
+          <Stack
+            flex={{ base: 1, md: 0 }}
+            justify={"flex-end"}
+            direction={"row"}
+            spacing={6}
+          >
+            <Button
+              border="none"
+              bg="#f5f6f7"
+              fontSize={"md"}
+              fontWeight={600}
+              color="blue.500"
+              variant="ghost"
+            >
+              FOR STUDENTS
+            </Button>
+            <Button
+              display={{ base: "inline-flex", md: "none" }}
+              bg="none"
+              _hover={{ bg: "red.200" }}
+              border="none"
+              color={useColorModeValue("red.400")}
+            >
+              LOGIN
+            </Button>
+            <Button
+              display={{ base: "none", md: "inline-flex" }}
+              border="1px"
+              fontSize={"md"}
+              fontWeight={400}
+              _hover={{ bg: "red.200" }}
+              borderColor="red.500"
+              color={useColorModeValue("red.400")}
+              variant="outline"
+            >
+              LOGIN
+            </Button>
+          </Stack>
         </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          <Button
-            border="none"
-            bg="#f5f6f7"
-            
-            fontSize={"md"}
-            fontWeight={600}
-            color="blue.500"
-            variant="ghost"
-          >
-            FOR STUDENTS
-          </Button>
-          <Button display={{ base: "inline-flex", md: "none" }} bg='none'  _hover={{ bg: "red.200" }}  border='none' color={useColorModeValue("red.400")} >
-                LOGIN
-            </Button>
-          <Button
-            display={{ base: "none", md: "inline-flex" }}
-            border="1px"
-            fontSize={"md"}
-            fontWeight={400}
-            _hover={{ bg: "red.200" }}
-            borderColor="red.500"
-            color={useColorModeValue("red.400")}
-            variant="outline"
-          >
-            LOGIN
-          </Button>
-        </Stack>
-      </Flex>
-
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-    </Box>
-  </>
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav />
+        </Collapse>
+      </Box>
+    </>
   );
 }
 
@@ -123,11 +148,11 @@ const DesktopNav = () => {
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
-                color={'black'}
+                color={"black"}
                 _hover={{
                   textDecoration: "none",
-                  color: 'red.400',
-                  bg: 'red.50',
+                  color: "red.400",
+                  bg: "red.50",
                 }}
               >
                 {navItem.label}
@@ -264,11 +289,9 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: "COURSES",
- 
   },
   {
     label: "REFER & EARN",
-   
   },
   {
     label: "FEES & PAP",
@@ -276,16 +299,16 @@ const NAV_ITEMS = [
   {
     label: "FREE RESOURCES",
   },
-  
+
   {
     label: "FOR CORPORATES",
     children: [
-        {
-          label: "PROGRAMME'D BY MASAI",
-        },
-        {
-          label: "HIRE FROM US",
-        },
-      ],
+      {
+        label: "PROGRAMME'D BY MASAI",
+      },
+      {
+        label: "HIRE FROM US",
+      },
+    ],
   },
 ];
