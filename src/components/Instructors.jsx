@@ -13,6 +13,7 @@ import {
     AspectRatio,
     chakra,
     Highlight,
+    Button
     
   } from "@chakra-ui/react";
   
@@ -35,14 +36,24 @@ import {
     const InstructorHeading = () => {
       return (
         <Box textAlign="center" py={10} px={6}>
+            <Button
+                mt="-30px"
+                colorScheme={"red"}
+                bg={"red"}
+                rounded={"md"}
+                px={6}
+                _hover={{
+                  bg: "red.400",
+                }}
+              >
+                START LEARNING
+              </Button>
           <Heading lineHeight="tall">
-            <Highlight
-              query="Instructors."
-              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
-            >
+           
               Meet Your Instructors.
-            </Highlight>
+           
           </Heading>
+          <Text color="gray.600" fontSize="sm">With extensive industry experience, the Masai Curriculum Team is a group of expert instructors.</Text>
         </Box>
       );
     };
@@ -119,9 +130,9 @@ import {
            loop={true}
            centeredSlides={true}
            autoplay={true}
-           
-           slidesPerView={3}
+        //    slidesPerView={4}
            spaceBetween={1}
+      
            slidesPerGroup={1}
            loopFillGroupWithBlank={true}
            pagination={{
@@ -135,16 +146,20 @@ import {
              <WrapItem  align={"center"}>
               <Center >
                 <Box
-                 
+                 width='300px'
+                 height='450px'
+                 borderRadius={2}
                   borderWidth="1px"
                   overflow="hidden"
-                  // border="2px solid red"
+                //   border="2px solid red"
                   rounded={"2xl"}
                   boxShadow={"xl"}
                 >
                    <Image
-                      boxSize='250px'
+                      
                       objectFit='cover'
+                      width="100%"
+                      
                       src={e.image}
                       alt='Dan Abramov'
                     />

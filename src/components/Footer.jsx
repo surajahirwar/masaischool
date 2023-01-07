@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <Box
       position='absolute'
-      top={2000}
+      top="4200px"
       left={0}
       width='100%'
       bg='black'
