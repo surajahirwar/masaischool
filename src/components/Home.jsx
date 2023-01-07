@@ -11,6 +11,7 @@ import {
   createIcon,
   Image
 } from '@chakra-ui/react';
+import Instructors from './Instructors';
 
 
 export default function Home() {
@@ -59,7 +60,7 @@ export default function Home() {
           fontSize={30} color={'black.500'}>
             Launch your dream career<br/>
            <b> at 0 upfront fee.</b>
-           <Image w="200px" src="https://www.masaischool.com/img/homepage/scribble.png" />
+           <Image mt='-20px' w="200px" src="https://www.masaischool.com/img/homepage/scribble.png" />
 
 
           </Text>
@@ -70,6 +71,7 @@ export default function Home() {
             alignSelf={'center'}
             position={'relative'}>
             <Button
+                mt="-30px"
               colorScheme={'red'}
               bg={'red'}
               rounded={'md'}
@@ -87,6 +89,10 @@ export default function Home() {
           </Stack>
         </Stack>
       </Container>
+      <Image src="https://masai-website-images.s3.ap-south-1.amazonaws.com/stud_image_desktop_upload_793ed2b430.png" />
+
+       <Instructors />       
+    
       </Box>
     </>
   );
