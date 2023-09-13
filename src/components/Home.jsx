@@ -59,7 +59,7 @@ export default function Home() {
               fontSize={30}
               color={"black.500"}
             >
-              Launch your dream career with piyush
+              Launch your dream career with cns
               <br />
               <b> at 0 upfront fee.</b>
               <Image
